@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserProfile: Identifiable, Codable {
-    let id: UUID
+    let id: Int
     
     var displayName: String
     

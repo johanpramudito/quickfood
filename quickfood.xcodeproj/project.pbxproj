@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		26BA69932FBD99B500D13453 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA69922FBD99B100D13453 /* ProfileView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		04C1AFD72FBD874A0059E9E3 /* quickfood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quickfood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26BA69922FBD99B100D13453 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -34,6 +39,7 @@
 			children = (
 				04C1AFD92FBD874A0059E9E3 /* quickfood */,
 				04C1AFD82FBD874A0059E9E3 /* Products */,
+				26BA69922FBD99B100D13453 /* ProfileView.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26BA69932FBD99B500D13453 /* ProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
