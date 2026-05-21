@@ -91,7 +91,7 @@ final class HealthCheckViewModel: ObservableObject {
     }
 
     private func flowDescription(_ value: Int) -> String {
-        guard let flow = HKCategoryValueMenstrualFlow(rawValue: value) else {
+        guard let flow = HKCategoryValueVaginalBleeding(rawValue: value) else {
             return "Unknown"
         }
 
@@ -110,4 +110,5 @@ final class HealthCheckViewModel: ObservableObject {
             return "Unknown"
         }
     }
+    
 }

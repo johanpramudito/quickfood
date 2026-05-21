@@ -11,31 +11,49 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
-
+    
+    @State var hasCheckedHealthData: Bool = false
+    
+    @StateObject var healthModel = HealthCheckViewModel()
+    
+    @State private var firstDay: Date?
+    @State private var todayCycleDay: CycleDay?
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+        NavigationView {
+            VStack(spacing: 16) {
+                if let firstDay {
+                    Text("First day: \(firstDay.formatted(date: .abbreviated, time: .omitted))")
                 }
-                .onDelete(perform: deleteItems)
+
+                if let todayCycleDay {
+                    Text("Day-\(todayCycleDay.day)")
+                        .font(.title)
+
+                    Text(todayCycleDay.phases.map { $0.rawValue }.joined(separator: ", "))
+                        .font(.headline)
+                } else {
+                    Text("No current cycle info")
+                        .foregroundStyle(.secondary)
+                }
+
+                Text(healthModel.status)
+                    .multilineTextAlignment(.center)
+
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+            .padding()
+            .navigationTitle("Health Data")
+            .task {
+                guard !hasCheckedHealthData else { return }
+                hasCheckedHealthData = true
+                healthModel.checkHealthData()
             }
-        } detail: {
-            Text("Select an item")
+            .onChange(of: healthModel.dataPoints.first?.startDate) { _, startDate in
+                guard let startDate else { return }
+
+                firstDay = startDate
+                todayCycleDay = currentCycleDay(from: startDate)
+            }
         }
     }
 
@@ -44,6 +62,8 @@ struct ContentView: View {
             let newItem = Item(timestamp: Date())
             modelContext.insert(newItem)
         }
+        let healthData = HealthCheckViewModel().dataPoints[0]
+        print("Health data: \(healthData)")
     }
 
     private func deleteItems(offsets: IndexSet) {
@@ -55,6 +75,9 @@ struct ContentView: View {
     }
 }
 
+func checkPhase(){
+    
+}
 #Preview {
     ContentView()
         .modelContainer(for: Item.self, inMemory: true)
