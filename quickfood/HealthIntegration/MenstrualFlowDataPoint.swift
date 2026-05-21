@@ -12,8 +12,8 @@ import HealthKit
 struct MenstrualFlowDataPoint: Identifiable {
     let id = UUID()
     let startDate: Date
-    let endDate: Date
     let flow: String
+    let isStartCycle: Bool
     let source: String
 }
 
@@ -37,7 +37,6 @@ struct HealthCheckView: View {
                             .font(.headline)
 
                         Text("Start: \(point.startDate.formatted(date: .abbreviated, time: .shortened))")
-                        Text("End: \(point.endDate.formatted(date: .abbreviated, time: .shortened))")
                         Text("Source: \(point.source)")
                             .foregroundStyle(.secondary)
                     }

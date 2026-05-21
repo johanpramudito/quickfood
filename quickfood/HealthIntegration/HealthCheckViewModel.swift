@@ -77,8 +77,8 @@ final class HealthCheckViewModel: ObservableObject {
                 self.dataPoints = menstrualSamples.map { sample in
                     MenstrualFlowDataPoint(
                         startDate: sample.startDate,
-                        endDate: sample.endDate,
                         flow: self.flowDescription(sample.value),
+                        isStartCycle: sample.metadata?[HKMetadataKeyMenstrualCycleStart] as? Bool ?? false,
                         source: sample.sourceRevision.source.name
                     )
                 }
