@@ -6,6 +6,8 @@
 //
 
 enum UserAllergy: String, Codable, Hashable, CaseIterable {
+    case chicken
+    case beef
     case peanuts
     case treeNuts
     case seafood
@@ -20,6 +22,8 @@ enum UserAllergy: String, Codable, Hashable, CaseIterable {
 
     var title: String {
         switch self {
+        case .chicken: "Chicken"
+        case .beef: "Beef"
         case .peanuts: "Peanuts"
         case .treeNuts: "Tree Nuts"
         case .seafood: "Seafood"
@@ -36,6 +40,8 @@ enum UserAllergy: String, Codable, Hashable, CaseIterable {
 
     var icon: String {
         switch self {
+        case .chicken: "🍗"
+        case .beef: "🥩"
         case .peanuts: "🥜"
         case .treeNuts: "🌰"
         case .seafood: "🐟"
