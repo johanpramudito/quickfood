@@ -39,6 +39,7 @@ struct HealthCheckView: View {
                         Text("Start: \(point.startDate.formatted(date: .abbreviated, time: .shortened))")
                         Text("Source: \(point.source)")
                             .foregroundStyle(.secondary)
+                        Text("is Start Cycle: \(point.isStartCycle ? "Yes" : "No")")
                     }
                     .padding(.vertical, 4)
                 }
