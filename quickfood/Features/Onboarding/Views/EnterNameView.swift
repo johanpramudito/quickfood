@@ -15,18 +15,23 @@ struct EnterNameView: View {
             Text("Discover food that fits your body today.")
                 .multilineTextAlignment(.leading)
                 .font(.largeTitle).bold()
+                .fontDesign(.rounded)
             Text("Personalized recommendations powered by your cycle and preferences.")
                 .multilineTextAlignment(.leading)
                 .font(.title2)
                 .fontWeight(.thin)
+                .fontDesign(.rounded)
             VStack(alignment: .leading, spacing: 8){
                 Text("Enter your name")
                     .font(.headline)
                     .fontWeight(.semibold)
+                    .fontDesign(.rounded)
                 TextField(
                     "John Doe",
                     text: $nama)
                 .padding(16)
+                .fontDesign(.rounded)
+
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .circular))
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
@@ -41,6 +46,7 @@ struct EnterNameView: View {
                     .bold()
                     .frame(maxWidth: .infinity)
                     .padding()
+                    .fontDesign(.rounded)
             }
             .foregroundStyle(.white)
             .glassEffect(.regular.tint(.primaryRed).interactive())
