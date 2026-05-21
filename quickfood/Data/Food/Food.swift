@@ -13,10 +13,7 @@ struct Food: Identifiable, Codable, Hashable {
     var name: String
     var description: String?
     
-    var texture: Set<Texture>
-    var taste: Set<Taste>
-
-    var allergens: Set<Allergen>
+    var tag: Set<foodTag>
 
     var imageName: String?
 
