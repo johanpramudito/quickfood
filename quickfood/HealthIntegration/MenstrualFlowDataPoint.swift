@@ -5,7 +5,6 @@
 //  Created by Bintang Marsyuma Rakhasunu on 21/05/26.
 //
 
-
 import SwiftUI
 import HealthKit
 
@@ -18,7 +17,7 @@ struct MenstrualFlowDataPoint: Identifiable {
 }
 
 struct HealthCheckView: View {
-    @StateObject private var viewModel = HealthCheckViewModel()
+    @State private var viewModel = HealthCheckViewModel()
 
     var body: some View {
         NavigationStack {

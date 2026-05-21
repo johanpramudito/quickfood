@@ -5,7 +5,6 @@
 //  Created by Bintang Marsyuma Rakhasunu on 21/05/26.
 //
 
-
 import Foundation
 import HealthKit
 import Combine
@@ -16,9 +15,10 @@ final class HealthCheckViewModel: ObservableObject {
 
     private let healthStore = HKHealthStore()
 
-    func checkHealthData() {
+    func checkHealthData(completion: @escaping () -> Void = {}) {
         guard HKHealthStore.isHealthDataAvailable() else {
             status = "HealthKit is not available on this device."
+            completion()
             return
         }
 
@@ -26,6 +26,7 @@ final class HealthCheckViewModel: ObservableObject {
             forIdentifier: .menstrualFlow
         ) else {
             status = "Menstrual flow type is not available."
+            completion()
             return
         }
 
@@ -38,6 +39,7 @@ final class HealthCheckViewModel: ObservableObject {
             if let error = error {
                 DispatchQueue.main.async {
                     self.status = "Authorization error: \(error.localizedDescription)"
+                    completion()
                 }
                 return
             }
@@ -45,15 +47,16 @@ final class HealthCheckViewModel: ObservableObject {
             guard success else {
                 DispatchQueue.main.async {
                     self.status = "Permission not granted."
+                    completion()
                 }
                 return
             }
 
-            self.fetchMenstrualFlowSamples(type: menstrualFlowType)
+            self.fetchMenstrualFlowSamples(type: menstrualFlowType, completion: completion)
         }
     }
 
-    private func fetchMenstrualFlowSamples(type: HKCategoryType) {
+    private func fetchMenstrualFlowSamples(type: HKCategoryType, completion: @escaping () -> Void) {
         let sort = NSSortDescriptor(
             key: HKSampleSortIdentifierStartDate,
             ascending: false
@@ -68,6 +71,7 @@ final class HealthCheckViewModel: ObservableObject {
             DispatchQueue.main.async {
                 if let error = error {
                     self.status = "Query error: \(error.localizedDescription)"
+                    completion()
                     return
                 }
 
@@ -84,6 +88,7 @@ final class HealthCheckViewModel: ObservableObject {
                 }
 
                 self.status = "Found \(self.dataPoints.count) menstrual flow records."
+                completion()
             }
         }
 
@@ -91,7 +96,7 @@ final class HealthCheckViewModel: ObservableObject {
     }
 
     private func flowDescription(_ value: Int) -> String {
-        guard let flow = HKCategoryValueMenstrualFlow(rawValue: value) else {
+        guard let flow = HKCategoryValueVaginalBleeding(rawValue: value) else {
             return "Unknown"
         }
 

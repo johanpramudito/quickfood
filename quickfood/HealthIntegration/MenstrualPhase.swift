@@ -28,7 +28,7 @@ struct cycleData {
 func makeCycleData(duration: Int, startDate: Date) -> [cycleData] {
     var cycles: [cycleData] = []
     var currentDate = startDate
-    var day = 1
+    var day = 0
 
     for _ in 0..<duration {
         currentDate.addTimeInterval(86400)
@@ -55,4 +55,24 @@ func phase(for cycleDay: Int) -> MenstrualPhase {
     default:
         return .mens
     }
+}
+
+func getPhase(todayDate: Date, listCycle: [cycleData]) -> MenstrualPhase {
+    for cycle in listCycle {
+        if Calendar.current.isDate(cycle.date, inSameDayAs: todayDate) {
+            return cycle.phase
+        }
+    }
+
+    return .mens
+}
+
+func getDay(todayDate: Date, listCycle: [cycleData]) -> Int {
+    for cycle in listCycle {
+        if Calendar.current.isDate(cycle.date, inSameDayAs: todayDate) {
+            return cycle.day
+        }
+    }
+
+    return 0
 }
