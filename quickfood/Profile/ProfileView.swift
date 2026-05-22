@@ -38,5 +38,5 @@ struct Profile: View {
 }
 
 #Preview {
-    Profile(User: UserProfile(id: 1, displayName: "Marwani", allergies: [.egg, .peanuts]))
+    Profile(User: UserProfile(id: 1, displayName: "Marwani"))
 }

@@ -12,6 +12,6 @@ struct UserProfile: Identifiable, Codable {
     
     var displayName: String
     
-    var allergies: [UserAllergy]
+//    var allergies: [UserAllergy]
     
 }
