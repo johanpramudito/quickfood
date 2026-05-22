@@ -48,11 +48,25 @@ func currentCycleDay(
     let current = calendar.startOfDay(for: today)
 
     let daysPassed = calendar.dateComponents([.day], from: start, to: current).day ?? 0
-    let day = daysPassed + 1
 
-    guard day >= 1, day <= cycleLength else {
+    guard daysPassed >= 0 else {
         return nil
     }
+
+    let day = (daysPassed % cycleLength) + 1
+
+    return CycleDay(
+        date: current,
+        phases: phases(for: day),
+        day: day
+    )
+}
+
+func estimatedCurrentCycleDay(today: Date = Date(), cycleLength: Int = 27) -> CycleDay {
+    let calendar = Calendar.current
+    let current = calendar.startOfDay(for: today)
+    let dayOfMonth = calendar.component(.day, from: current)
+    let day = ((dayOfMonth - 1) % cycleLength) + 1
 
     return CycleDay(
         date: current,
