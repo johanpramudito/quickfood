@@ -5,19 +5,22 @@
 //  Created by Bintang Marsyuma Rakhasunu on 20/05/26.
 //
 
-import SwiftUI
+import SwiftData
 
-struct Food: Identifiable, Codable, Hashable {
-    let id: UUID
 
+@Model
+final class Food {
     var name: String
-    var description: String?
-    
-    var tag: Set<foodTag>
+    var category: String
+    var tags: [String]
+    var cyclePhase: String
+    var notes: String
 
-    var imageName: String?
-
-
-    var isActive: Bool
+    init(name: String, category: String, tags: [String],cyclePhase: String, notes: String) {
+        self.name = name
+        self.category = category
+        self.tags = tags
+        self.cyclePhase = cyclePhase
+        self.notes = notes
+    }
 }
-
