@@ -6,5 +6,5 @@
 //
 
 enum foodTag: String, Codable {
-    case menstruation, follicular, ovulation, luteala
+    case menstruationPhase, follicularPhase, ovulationPhase, lutealaPhase
 }
