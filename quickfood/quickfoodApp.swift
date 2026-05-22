@@ -25,7 +25,7 @@ struct quickfoodApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MenstrualDataSimulation()
+            ContentView()
         }
         .modelContainer(sharedModelContainer)
     }

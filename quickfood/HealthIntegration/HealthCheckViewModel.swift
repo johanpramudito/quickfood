@@ -115,4 +115,5 @@ final class HealthCheckViewModel: ObservableObject {
             return "Unknown"
         }
     }
+    
 }
