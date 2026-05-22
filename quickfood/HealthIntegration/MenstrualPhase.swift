@@ -28,9 +28,9 @@ struct cycleData {
 func makeCycleData(duration: Int, startDate: Date) -> [cycleData] {
     var cycles: [cycleData] = []
     var currentDate = startDate
-    var day = 0
+    var day = 1
 
-    for _ in 0..<duration {
+    for _ in 1..<duration {
         currentDate.addTimeInterval(86400)
         day += 1
 
@@ -74,5 +74,5 @@ func getDay(todayDate: Date, listCycle: [cycleData]) -> Int {
         }
     }
 
-    return 0
+    return 1
 }
