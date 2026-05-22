@@ -10,7 +10,8 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    
+    @Query private var foods: [Food]
     
     @State var hasCheckedHealthData: Bool = false
     
@@ -18,6 +19,15 @@ struct ContentView: View {
     
     @State private var firstDay: Date?
     @State private var todayCycleDay: CycleDay?
+    
+    var recommendedFoods: [Food] {
+        guard let phase = todayCycleDay?.phases.first?.rawValue else {
+            return []
+        }
+
+        return foods.filter { $0.cyclePhase == phase }
+    }
+    
     
     var body: some View {
         NavigationView {
@@ -39,14 +49,35 @@ struct ContentView: View {
 
                 Text(healthModel.status)
                     .multilineTextAlignment(.center)
+                
+                List(recommendedFoods) { food in
+                    VStack(alignment: .leading) {
+                        Text(food.name)
+                            .font(.headline)
+
+                        Text(food.category)
+                            .foregroundStyle(.secondary)
+
+                        Text(food.notes)
+                            .font(.caption)
+                        
+                        ForEach(food.tags, id: \.self) { tag in
+                            Text(tag)
+                                .font(.caption)
+                        }
+                    }
+                }
 
             }
             .padding()
             .navigationTitle("Health Data")
             .task {
+                seedFoodsIfNeeded(modelContext: modelContext)
+                
                 guard !hasCheckedHealthData else { return }
                 hasCheckedHealthData = true
                 healthModel.checkHealthData()
+                print(recommendedFoods)
             }
             .onChange(of: healthModel.dataPoints.first?.startDate) { _, startDate in
                 guard let startDate else { return }
@@ -54,6 +85,7 @@ struct ContentView: View {
                 firstDay = startDate
                 todayCycleDay = currentCycleDay(from: startDate)
             }
+            
         }
     }
 
@@ -69,16 +101,13 @@ struct ContentView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(foods[index])
             }
         }
     }
 }
 
-func checkPhase(){
-    
-}
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Food.self, inMemory: true)
 }

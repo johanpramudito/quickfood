@@ -72,7 +72,6 @@ final class HealthCheckViewModel: ObservableObject {
                 }
 
                 let menstrualSamples = samples as? [HKCategorySample] ?? []
-                print(menstrualSamples)
                 
                 self.dataPoints = menstrualSamples.map { sample in
                     MenstrualFlowDataPoint(
