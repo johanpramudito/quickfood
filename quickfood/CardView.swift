@@ -6,34 +6,37 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CardView: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var offset: CGSize = .zero
     
+    @State var foodsData: Food
+
     var body: some View {
         ZStack {
             VStack(spacing: 16) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Sayur Asem")
+                    Text("\(foodsData.name)")
                         .foregroundStyle(Color.white)
                         .font(.title.bold())
                     
                     HStack(spacing: 8) {
-                        // Nanti for each tag
-                        HStack(spacing: 4) {
-                            Text("#Ayam")
-                                .foregroundStyle(Color.black)
-                            
+                        ForEach(foodsData.tags, id: \.self) { tag in
+                            HStack(spacing: 4) {
+                                Text("\(tag)")
+                                    .foregroundStyle(Color.black)
+                            }
+                            .frame(width: 102, height: 31)
+                            .background(Color.white.opacity(0.7))
+                            .cornerRadius(20)
                         }
-                        .frame(width: 102, height: 31)
-                        .background(Color.white.opacity(0.7))
-                        .cornerRadius(20)
-                        .glassEffect()
                     }
                     
                     Divider()
                     
-                    Text("Sayur asem is a traditional Indonesian vegetable soup dish with a clear or slightly cloudy broth with a fresh, savory, and slightly sweet tamarind flavor.")
+                    Text("\(foodsData.notes)")
                         .font(.callout)
                         .foregroundStyle(Color.white)
                 }
@@ -81,6 +84,50 @@ struct CardView: View {
     }
 }
 
+extension View {
+    func stacked(at position: Int, in total: Int) -> some View {
+        let offset = Double(total - position)
+        let cardscale = 1 - (offset * 0.05)
+            
+        return self
+            .scaleEffect(cardscale)
+            .offset(y: 25 * offset)
+        
+    }
+}
+
+struct PreviewCard: View {
+    @Environment(\.modelContext) private var modelContext
+    
+    @Query(sort:\Food.name) private var foodsData: [Food]
+    
+    var body: some View {
+        Button {
+            seedFoodsIfNeeded(modelContext: modelContext)
+        } label: {
+            Text("Generate Food")
+        }
+        .buttonStyle(.borderedProminent)
+        
+        ZStack {
+            ForEach(foodsData) { food in
+                CardView(foodsData: food)
+            }
+        }
+    }
+}
+
+
 #Preview {
-    CardView()
+//    CardView(
+//        foodsData: Food(
+//            name: "Bubur Ayam Jahe",
+//            category: "Comfort Meal",
+//            tags: ["Chicken", "Ginger", "Warm"],
+//            cyclePhase: "menstruationPhase",
+//            notes: "Warm, gentle meal with protein and ginger."
+//        )
+//    )
+    
+    PreviewCard()
 }
