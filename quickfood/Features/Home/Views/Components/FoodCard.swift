@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FoodCard: View {
     @StateObject private var viewModel: CardViewModel
+    
+    let SUPABASE_URL = "https://vlusefqntgrzetlqvulu.supabase.co/storage/v1/object/public/FoodCycle"
 
     private let onSwiped: () -> Void
 
@@ -26,7 +28,7 @@ struct FoodCard: View {
                         .font(.title.bold())
                     
                     HStack(spacing: 8) {
-                        ForEach(viewModel.food.tags, id: \.self) { tag in
+                        ForEach(viewModel.food.nutrition, id: \.self) { tag in
                             HStack(spacing: 4) {
                                 Text("\(tag)")
                                     .foregroundStyle(Color.black)
@@ -48,10 +50,17 @@ struct FoodCard: View {
             }
             .frame(width: 362, height: 460, alignment: .leading)
             .background(
-                Image("Sayurasem")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea()
+                AsyncImage(url: URL(string: "\(SUPABASE_URL)/\(viewModel.food.image).jpg")) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image.resizable().aspectRatio(contentMode: .fill)
+                    case .failure, .empty:
+                        Color.red.opacity(0.4) // fallback color
+                    @unknown default:
+                        Color.gray.opacity(0.3)
+                    }
+                }
+                .ignoresSafeArea()
             )
             .cornerRadius(24)
             .padding(16)
@@ -111,8 +120,10 @@ extension View {
             name: "Sayur Asem",
             category: "Soup",
             tags: ["Fresh", "Light"],
+            nutrition: ["Vitamin C"],
             cyclePhase: "Menstrual",
-            notes: "A warm vegetable soup with a bright, tangy broth."
+            notes: "A warm vegetable soup with a bright, tangy broth.",
+            image: "sigma"
         )
     )
 }

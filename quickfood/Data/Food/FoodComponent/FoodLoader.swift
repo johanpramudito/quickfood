@@ -12,8 +12,10 @@ struct FoodSeed: Decodable {
     let name: String
     let category: String
     let tags: [String]
+    let nutrition: [String]
     let cyclePhase: String
     let notes: String
+    let image: String
 }
 
 func seedFoodsIfNeeded(modelContext: ModelContext) {
@@ -39,8 +41,10 @@ func seedFoodsIfNeeded(modelContext: ModelContext) {
                 name: seed.name,
                 category: seed.category,
                 tags: seed.tags,
+                nutrition: seed.nutrition,
                 cyclePhase: seed.cyclePhase,
-                notes: seed.notes
+                notes: seed.notes,
+                image: seed.image
             )
 
             modelContext.insert(food)
