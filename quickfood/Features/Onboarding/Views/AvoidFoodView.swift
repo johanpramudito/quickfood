@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AvoidFoodView: View {
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
+
     @State private var nama:String = ""
     @State private var selectedAllergies: Set<UserAllergy> = []
     
@@ -116,7 +118,7 @@ struct AvoidFoodView: View {
 
             Spacer()
             Button {
-
+                hasCompletedOnboarding = true
             } label: {
                 Text("Next")
                     .bold()
@@ -125,6 +127,7 @@ struct AvoidFoodView: View {
             }
             .foregroundStyle(.white)
             .glassEffect(.regular.tint(.primaryRed).interactive())
+            .navigationBarBackButtonHidden(true)
 
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(20)

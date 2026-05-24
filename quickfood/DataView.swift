@@ -24,7 +24,7 @@ struct ContentView: View {
         guard let phase = todayCycleDay?.phases.first?.rawValue else {
             return []
         }
-
+        
         return foods.filter { $0.cyclePhase == phase }
     }
     
@@ -35,18 +35,18 @@ struct ContentView: View {
                 if let firstDay {
                     Text("First day: \(firstDay.formatted(date: .abbreviated, time: .omitted))")
                 }
-
+                
                 if let todayCycleDay {
                     Text("Day-\(todayCycleDay.day)")
                         .font(.title)
-
+                    
                     Text(todayCycleDay.phases.map { $0.rawValue }.joined(separator: ", "))
                         .font(.headline)
                 } else {
                     Text("No current cycle info")
                         .foregroundStyle(.secondary)
                 }
-
+                
                 Text(healthModel.status)
                     .multilineTextAlignment(.center)
                 
@@ -54,10 +54,10 @@ struct ContentView: View {
                     VStack(alignment: .leading) {
                         Text(food.name)
                             .font(.headline)
-
+                        
                         Text(food.category)
                             .foregroundStyle(.secondary)
-
+                        
                         Text(food.notes)
                             .font(.caption)
                         
@@ -67,7 +67,7 @@ struct ContentView: View {
                         }
                     }
                 }
-
+                
             }
             .padding()
             .navigationTitle("Health Data")
@@ -81,30 +81,14 @@ struct ContentView: View {
             }
             .onChange(of: healthModel.dataPoints.first?.startDate) { _, startDate in
                 guard let startDate else { return }
-
+                
                 firstDay = startDate
                 todayCycleDay = currentCycleDay(from: startDate)
             }
             
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-        let healthData = HealthCheckViewModel().dataPoints[0]
-        print("Health data: \(healthData)")
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(foods[index])
-            }
-        }
-    }
+    
 }
 
 #Preview {

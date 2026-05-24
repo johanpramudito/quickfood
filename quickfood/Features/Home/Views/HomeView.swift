@@ -9,6 +9,8 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
+    @AppStorage("userName") private var userName = ""
+    
     @StateObject private var viewModel = HomeViewModel()
 
     var body: some View {
@@ -18,7 +20,7 @@ struct HomeView: View {
                     .fill(Color.red)
                     .frame(width: 50, height: 50)
                 VStack(alignment: .leading) {
-                    Text("Morning, Marwani!")
+                    Text("Morning, \(userName)!")
                         .font(.title2)
                         .fontWeight(.bold)
                     Text(Date(), style: .date)
