@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AvoidFoodView: View {
-    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
+    @State private var navigateToHealthPermission = false
 
     @State private var nama:String = ""
     @State private var selectedAllergies: Set<UserAllergy> = []
@@ -118,7 +118,7 @@ struct AvoidFoodView: View {
 
             Spacer()
             Button {
-                hasCompletedOnboarding = true
+                navigateToHealthPermission = true
             } label: {
                 Text("Next")
                     .bold()
@@ -127,6 +127,9 @@ struct AvoidFoodView: View {
             }
             .foregroundStyle(.white)
             .glassEffect(.regular.tint(.primaryRed).interactive())
+            .navigationDestination(isPresented: $navigateToHealthPermission) {
+                HealthPermissionView()
+            }
             .navigationBarBackButtonHidden(true)
 
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
