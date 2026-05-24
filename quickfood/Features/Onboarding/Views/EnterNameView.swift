@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct EnterNameView: View {
+    @AppStorage("userName") private var userName = ""
+    @State private var navigateToAvoidFood = false
+    
     @State private var nama:String = ""
     
     var body: some View {
@@ -40,7 +43,12 @@ struct EnterNameView: View {
             }
             Spacer()
             Button {
-
+                guard nama != "" else {
+                    return
+                }
+                userName = nama
+                navigateToAvoidFood = true
+                
             } label: {
                 Text("Next")
                     .bold()
@@ -50,6 +58,10 @@ struct EnterNameView: View {
             }
             .foregroundStyle(.white)
             .glassEffect(.regular.tint(.primaryRed).interactive())
+            .navigationDestination(isPresented: $navigateToAvoidFood) {
+                AvoidFoodView()
+            }
+            .navigationBarBackButtonHidden(true)
 
         }.padding(20)
     }

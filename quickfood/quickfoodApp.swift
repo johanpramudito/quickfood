@@ -13,7 +13,6 @@ struct quickfoodApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Food.self,
-            Item.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -26,7 +25,7 @@ struct quickfoodApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
         .modelContainer(sharedModelContainer)
     }
