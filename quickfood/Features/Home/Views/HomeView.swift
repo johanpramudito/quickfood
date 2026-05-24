@@ -33,7 +33,7 @@ struct HomeView: View {
             
             PhaseCard(cycleDay: viewModel.todayCycleDay)
             
-            CardView()
+            CardView(currentPhase: viewModel.todayCycleDay?.phases.first)
         }
         .task {
             viewModel.loadHealthDataIfNeeded()
