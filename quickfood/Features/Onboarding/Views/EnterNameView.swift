@@ -38,7 +38,7 @@ struct EnterNameView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .circular))
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.black, lineWidth: 1.5)
+                        .stroke(Color.primary, lineWidth: 1.5)
                 )
             }
             Spacer()
