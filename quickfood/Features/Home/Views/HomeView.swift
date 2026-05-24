@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 8) {
             HStack{
                 Circle()
                     .fill(Color.red)
@@ -29,13 +30,17 @@ struct HomeView: View {
             .frame(maxWidth: .infinity, alignment: .init(horizontal: .leading, vertical: .top))
             
             PhaseCard(cycleDay: viewModel.todayCycleDay)
+            
+            CardView()
         }
         .task {
             viewModel.loadHealthDataIfNeeded()
+            
         }
     }
 }
 
 #Preview {
     HomeView()
+        .modelContainer(for: Food.self, inMemory: true)
 }

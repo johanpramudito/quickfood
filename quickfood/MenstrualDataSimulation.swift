@@ -29,6 +29,12 @@ struct MenstrualDataSimulation: View {
 
             Text("Hari ke : \(todayDay) dalam siklus")
             Text("Today: \(todayPhase.rawValue)")
+            
+            ForEach(healthViewModel.dataPoints) { dataPoint in
+                Text(dataPoint.startDate.formatted(date: .abbreviated, time: .omitted))
+                
+                Text("\(dataPoint.flow)")
+            }
         }
         .onAppear {
             loadCycleData()
@@ -42,7 +48,7 @@ struct MenstrualDataSimulation: View {
     }
 
     private func updateCycleData() {
-        guard let latestDataPoint = healthViewModel.dataPoints.last,
+        guard let latestDataPoint = healthViewModel.dataPoints.first,
               latestDataPoint.isStartCycle else {
             return
         }
