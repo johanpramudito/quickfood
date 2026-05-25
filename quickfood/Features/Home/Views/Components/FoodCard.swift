@@ -26,7 +26,7 @@ struct FoodCard: View {
                 case .success(let image):
                     image.resizable().aspectRatio(contentMode: .fill)
                 case .failure, .empty:
-                    Color.red.opacity(0.4)
+                    Color.primaryYellow.opacity(0.4)
                 @unknown default:
                     Color.gray.opacity(0.3)
                 }
@@ -39,7 +39,7 @@ struct FoodCard: View {
                 case .success(let image):
                     image.resizable().aspectRatio(contentMode: .fill)
                 case .failure, .empty:
-                    Color.red.opacity(0.4)
+                    Color.primaryYellow.opacity(0.4)
                 @unknown default:
                     Color.gray.opacity(0.3)
                 }

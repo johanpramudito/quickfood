@@ -82,7 +82,7 @@ struct WelcomeView: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                 }
-                .foregroundStyle(.primaryRed)
+                .foregroundStyle(.primaryYellow)
                 .glassEffect(.regular.tint(.white).interactive())
                 .padding(.horizontal, 24)
                 .padding(.bottom, 16)
@@ -92,7 +92,7 @@ struct WelcomeView: View {
             }
             
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.primaryRed)
+            .background(Color.primaryYellow)
             .navigationDestination(isPresented: $navigateToEnterName) {
                     EnterNameView()
                 }
