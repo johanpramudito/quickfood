@@ -48,9 +48,10 @@ struct PhaseCard: View {
             .foregroundColor(.black)
             .background(Color.white)
             .cornerRadius(8)
+            .fixedSize(horizontal: false, vertical: true)
         }
         .padding(20)
-        .background(Color.primaryRed)
+        .background(Color.primaryYellow)
         .cornerRadius(20)
         .padding(20)
         

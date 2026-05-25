@@ -57,7 +57,7 @@ struct EnterNameView: View {
                     .fontDesign(.rounded)
             }
             .foregroundStyle(.white)
-            .glassEffect(.regular.tint(.primaryRed).interactive())
+            .glassEffect(.regular.tint(.primaryYellow).interactive())
             .navigationDestination(isPresented: $navigateToAvoidFood) {
                 AvoidFoodView()
             }

@@ -126,7 +126,7 @@ struct AvoidFoodView: View {
                     .padding()
             }
             .foregroundStyle(.white)
-            .glassEffect(.regular.tint(.primaryRed).interactive())
+            .glassEffect(.regular.tint(.primaryYellow).interactive())
             .navigationDestination(isPresented: $navigateToHealthPermission) {
                 HealthPermissionView()
             }
