@@ -15,3 +15,8 @@ struct UserProfile: Identifiable, Codable {
 //    var allergies: [UserAllergy]
     
 }
+
+#Preview {
+    let profile = UserProfile(id: 1, displayName: "Preview User")
+    Text(profile.displayName)
+}
