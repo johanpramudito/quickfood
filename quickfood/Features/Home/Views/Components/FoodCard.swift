@@ -69,7 +69,7 @@ struct FoodCard: View {
                     .font(.title.bold())
                 
                 HStack(spacing: 8) {
-                    ForEach(viewModel.food.nutrition, id: \.self) { tag in
+                    ForEach(Array(viewModel.food.nutrition.prefix(3)), id: \.self) { tag in
                         HStack(spacing: 4) {
                             Text("\(tag)")
                                 .foregroundStyle(Color.black)
