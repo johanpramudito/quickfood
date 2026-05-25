@@ -20,53 +20,78 @@ struct FoodCard: View {
     }
 
     var body: some View {
-        ZStack {
-            VStack(spacing: 16) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("\(viewModel.food.name)")
-                        .foregroundStyle(Color.white)
-                        .font(.title.bold())
-                    
-                    HStack(spacing: 8) {
-                        ForEach(viewModel.food.nutrition, id: \.self) { tag in
-                            HStack(spacing: 4) {
-                                Text("\(tag)")
-                                    .foregroundStyle(Color.black)
-                            }
-                            .frame(width: 102, height: 31)
-                            .background(Color.white.opacity(0.7))
-                            .cornerRadius(20)
-                        }
-                    }
-                    
-                    Divider()
-                    
-                    Text("\(viewModel.food.notes)")
-                        .font(.callout)
-                        .foregroundStyle(Color.white)
+        ZStack(alignment: .bottomLeading) {
+            AsyncImage(url: URL(string: "\(SUPABASE_URL)/\(viewModel.food.image).jpg")) { phase in
+                switch phase {
+                case .success(let image):
+                    image.resizable().aspectRatio(contentMode: .fill)
+                case .failure, .empty:
+                    Color.red.opacity(0.4)
+                @unknown default:
+                    Color.gray.opacity(0.3)
                 }
-                .padding(16)
-                .padding(.top, 252)
             }
-            .frame(width: 362, height: 460, alignment: .leading)
-            .background(
-                AsyncImage(url: URL(string: "\(SUPABASE_URL)/\(viewModel.food.image).jpg")) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image.resizable().aspectRatio(contentMode: .fill)
-                    case .failure, .empty:
-                        Color.red.opacity(0.4) // fallback color
-                    @unknown default:
-                        Color.gray.opacity(0.3)
+            .frame(width: 362, height: 460)
+            .clipped()
+
+            AsyncImage(url: URL(string: "\(SUPABASE_URL)/\(viewModel.food.image).jpg")) { phase in
+                switch phase {
+                case .success(let image):
+                    image.resizable().aspectRatio(contentMode: .fill)
+                case .failure, .empty:
+                    Color.red.opacity(0.4)
+                @unknown default:
+                    Color.gray.opacity(0.3)
+                }
+            }
+            .frame(width: 362, height: 460)
+            .blur(radius: 16)
+            .clipped()
+            .mask(
+                VStack(spacing: 0) {
+                    Spacer()
+                    LinearGradient(
+                        stops: [
+                            .init(color: .clear, location: 0),
+                            .init(color: .black, location: 0.35),
+                            .init(color: .black, location: 1)
+                        ],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                    .frame(height: 230)
+                }
+            )
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("\(viewModel.food.name)")
+                    .foregroundStyle(Color.white)
+                    .font(.title.bold())
+                
+                HStack(spacing: 8) {
+                    ForEach(viewModel.food.nutrition, id: \.self) { tag in
+                        HStack(spacing: 4) {
+                            Text("\(tag)")
+                                .foregroundStyle(Color.black)
+                        }
+                        .frame(width: 102, height: 31)
+                        .background(Color.white.opacity(0.7))
+                        .cornerRadius(20)
                     }
                 }
-                .ignoresSafeArea()
-            )
-            .cornerRadius(24)
+                
+                Divider()
+                    .overlay(Color.white.opacity(0.4))
+                
+                Text("\(viewModel.food.notes)")
+                    .font(.callout)
+                    .foregroundStyle(Color.white)
+            }
             .padding(16)
-//            .padding(.top, 252)
-            //        .blur(radius: 0.1)
         }
+        .frame(width: 362, height: 460, alignment: .bottomLeading)
+        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .padding(16)
         .offset(x: viewModel.xOffset, y: 0)
         .rotationEffect(.degrees(viewModel.rotationDegrees))
         .gesture(
@@ -122,7 +147,7 @@ extension View {
             tags: ["Fresh", "Light"],
             nutrition: ["Vitamin C"],
             cyclePhase: "Menstrual",
-            notes: "A warm vegetable soup with a bright, tangy broth.",
+            notes: "Sayur asem is a traditional Indonesian vegetable soup dish with a clear or slightly cloudy broth with a fresh, savory, and slightly sweet tamarind flavor.",
             image: "sigma"
         )
     )
