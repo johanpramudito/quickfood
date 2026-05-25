@@ -64,6 +64,7 @@ struct EnterNameView: View {
             .navigationBarBackButtonHidden(true)
 
         }.padding(20)
+            .background(.primaryBackground)
     }
 }
 

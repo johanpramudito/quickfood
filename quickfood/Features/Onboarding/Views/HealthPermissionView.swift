@@ -66,6 +66,7 @@ struct HealthPermissionView: View {
             .navigationBarBackButtonHidden(true)
 
         }.padding(20)
+            .background(.primaryBackground)
     }
 }
 
