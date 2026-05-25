@@ -134,6 +134,7 @@ struct AvoidFoodView: View {
 
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(20)
+        .background(.primaryBackground)
     }
 }
 

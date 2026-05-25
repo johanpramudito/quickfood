@@ -35,6 +35,7 @@ struct HomeView: View {
             
             CardView(currentPhase: viewModel.todayCycleDay?.phases.first)
         }
+        .background(.primaryBackground)
         .padding(.top, 16)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .task {
