@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct WelcomeView: View {
-
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
+    
     @State private var navigateToEnterName = false
 
     @State private var showHeader = false
     @State private var showImages = false
     @State private var showButton = false
 
+    
     var body: some View {
         NavigationStack{
             
@@ -53,7 +55,7 @@ struct WelcomeView: View {
                             )
                         )
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .offset(x: showImages ? 0 : -120)
+                        .offset(x: reduceMotion ? 0 : (showImages ? 0 : 120))
                         .opacity(showImages ? 1 : 0)
                     
                     Image("OnboardingMan")
@@ -69,7 +71,7 @@ struct WelcomeView: View {
                             )
                         )
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .offset(x: showImages ? 0 : 120)
+                        .offset(x: reduceMotion ? 0 : (showImages ? 0 : -120))
                         .opacity(showImages ? 1 : 0)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -80,7 +82,9 @@ struct WelcomeView: View {
                     Text("Start")
                         .bold()
                         .frame(maxWidth: .infinity)
+                        .frame(minHeight: 44)
                         .padding()
+                    
                 }
                 .foregroundStyle(.primaryYellow)
                 .glassEffect(.regular.tint(.white).interactive())
@@ -97,17 +101,20 @@ struct WelcomeView: View {
                     EnterNameView()
                 }
             .onAppear {
-                
-                withAnimation(.easeOut(duration: 0.8)) {
+                if reduceMotion {
                     showHeader = true
-                }
-                
-                withAnimation(.easeOut(duration: 1).delay(0.3)) {
                     showImages = true
-                }
-                
-                withAnimation(.easeOut(duration: 0.6).delay(1.0)) {
                     showButton = true
+                } else {
+                    withAnimation(.easeOut(duration: 0.8)) {
+                        showHeader = true
+                    }
+                    withAnimation(.easeOut(duration: 1).delay(0.3)) {
+                        showImages = true
+                    }
+                    withAnimation(.easeOut(duration: 0.6).delay(1.0)) {
+                        showButton = true
+                    }
                 }
             }
         }

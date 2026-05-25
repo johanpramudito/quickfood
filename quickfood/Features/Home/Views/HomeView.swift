@@ -28,6 +28,8 @@ struct HomeView: View {
                         .fontWeight(.light)
                 }
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("Morning, \(userName). \(Date().formatted(date: .long, time: .omitted))")
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)
             

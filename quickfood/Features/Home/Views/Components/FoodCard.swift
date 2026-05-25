@@ -10,6 +10,8 @@ import SwiftUI
 struct FoodCard: View {
     @StateObject private var viewModel: CardViewModel
     
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    
     let SUPABASE_URL = "https://vlusefqntgrzetlqvulu.supabase.co/storage/v1/object/public/FoodCycle"
 
     private let onSwiped: () -> Void
@@ -44,6 +46,8 @@ struct FoodCard: View {
                     Color.gray.opacity(0.3)
                 }
             }
+            .accessibilityLabel("\(viewModel.food.name) photo")
+            .accessibilityHint("Swipe left or right to skip")
             .frame(width: 362, height: 460)
             .blur(radius: 16)
             .clipped()
@@ -72,7 +76,7 @@ struct FoodCard: View {
                     ForEach(Array(viewModel.food.nutrition.prefix(3)), id: \.self) { tag in
                         HStack(spacing: 4) {
                             Text("\(tag)")
-                                .foregroundStyle(Color.black)
+                                .foregroundStyle(Color.primary)
                         }
                         .frame(width: 102, height: 31)
                         .background(Color.white.opacity(0.7))
@@ -102,9 +106,33 @@ struct FoodCard: View {
                 .onEnded { _ in
                     handleSwipeEnded()
                 }
+            
         )
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(viewModel.food.name). \(viewModel.food.notes)")
+        .accessibilityHint("Swipe left or right to skip, or use the actions below")
+        .accessibilityAction(named: "Skip this food") {
+            performAccessibilitySwipe(to: .right)
+        }
+        .accessibilityAction(named: "Save this food") {
+            performAccessibilitySwipe(to: .left)
+        }
+        .frame(maxWidth: .infinity)
+        .aspectRatio(362 / 460, contentMode: .fit)
     }
 
+    private func performAccessibilitySwipe(to direction: SwipeDirection) {
+        if reduceMotion {
+            viewModel.moveOffscreen(to: direction)
+            finishSwipe()
+        } else {
+            withAnimation(.spring(response: 0.34, dampingFraction: 0.86)) {
+                viewModel.moveOffscreen(to: direction)
+            }
+            finishSwipe()
+        }
+    }
+    
     private func handleSwipeEnded() {
         guard let direction = viewModel.swipeDirection() else {
             withAnimation(.spring(response: 0.32, dampingFraction: 0.9)) {

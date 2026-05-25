@@ -24,6 +24,8 @@ struct PhaseCard: View {
             HStack {
                 Text(phaseIcon)
                     .font(.system(size: 50))
+                    .accessibilityLabel(phaseTitle + " icon")
+                    .accessibilityHidden(false)
 
                 VStack(alignment: .leading) {
                     Text(phaseTitle)
