@@ -206,7 +206,7 @@
       "Protein",
       "Vitamin C"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Mixed Vegetables, Peanuts — antioxidant-rich, good protein source.",
     "page": 559,
     "image": "pecel"
@@ -223,7 +223,7 @@
       "Fiber",
       "Vitamin C"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Mixed Vegetables, Coconut — antioxidant-rich.",
     "page": 629,
     "image": "urap"
@@ -240,7 +240,7 @@
       "Fiber",
       "Vitamin C"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Soupy side dish with Tamarind, Vegetables — antioxidant-rich.",
     "page": 281,
     "image": "sayur-asam-sawi"
@@ -255,7 +255,7 @@
       "Fiber",
       "Vitamin C"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Soupy side dish with Vegetables.",
     "page": 298,
     "image": "sayur-lelawar"
@@ -275,7 +275,7 @@
       "Protein",
       "Vitamin C"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Chicken, Spice Blend, Spicy Fruit Salad — antioxidant-rich, good protein source.",
     "page": 362,
     "image": "ayam-bumbu-rujak"
@@ -293,7 +293,7 @@
       "Vitamin C",
       "Zinc"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Pickled side dish — antioxidant-rich, zinc source.",
     "page": 376,
     "image": "acar"
@@ -308,7 +308,7 @@
       "Fiber",
       "Healthy fats"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Soupy side dish with Mixed Vegetables.",
     "page": 260,
     "image": "lodeh"
@@ -616,7 +616,7 @@
       "Protein",
       "Vitamin C"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Mixed Vegetables, Peanuts — antioxidant-rich, good protein source.",
     "page": null,
     "image": "gado-gado"
@@ -633,7 +633,7 @@
       "Iron",
       "Vitamin C"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Water Spinach — antioxidant-rich.",
     "page": null,
     "image": "oseng-kangkung"
@@ -650,7 +650,7 @@
       "Fiber",
       "Vitamin C"
     ],
-    "cyclePhase": "ovulatoryPhase",
+    "cyclePhase": "ovulationPhase",
     "notes": "Soupy side dish with Mixed Vegetables, Carrot — antioxidant-rich.",
     "page": null,
     "image": "sop-sayuran"
