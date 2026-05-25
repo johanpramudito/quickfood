@@ -6,19 +6,89 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		042C5ECD2FC489DA00713A5F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C5ECC2FC489DA00713A5F /* WidgetKit.framework */; };
+		042C5ECF2FC489DA00713A5F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C5ECE2FC489DA00713A5F /* SwiftUI.framework */; };
+		042C5EDC2FC489DA00713A5F /* recommendationwidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 042C5ECA2FC489DA00713A5F /* recommendationwidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		042C5EDA2FC489DA00713A5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04C1AFCF2FBD874A0059E9E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 042C5EC92FC489DA00713A5F;
+			remoteInfo = recommendationwidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		042C5EDD2FC489DA00713A5F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				042C5EDC2FC489DA00713A5F /* recommendationwidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		042C5ECA2FC489DA00713A5F /* recommendationwidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = recommendationwidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		042C5ECC2FC489DA00713A5F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		042C5ECE2FC489DA00713A5F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		04C1AFD72FBD874A0059E9E3 /* quickfood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quickfood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		042C5EE02FC489DA00713A5F /* Exceptions for "recommendationwidget" folder in "recommendationwidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 042C5EC92FC489DA00713A5F /* recommendationwidgetExtension */;
+		};
+		042C5EE72FC489F900713A5F /* Exceptions for "quickfood" folder in "recommendationwidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DataSource/foods.json,
+			);
+			target = 042C5EC92FC489DA00713A5F /* recommendationwidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		042C5ED02FC489DA00713A5F /* recommendationwidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				042C5EE02FC489DA00713A5F /* Exceptions for "recommendationwidget" folder in "recommendationwidgetExtension" target */,
+			);
+			path = recommendationwidget;
+			sourceTree = "<group>";
+		};
 		04C1AFD92FBD874A0059E9E3 /* quickfood */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				042C5EE72FC489F900713A5F /* Exceptions for "quickfood" folder in "recommendationwidgetExtension" target */,
+			);
 			path = quickfood;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		042C5EC72FC489DA00713A5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042C5ECF2FC489DA00713A5F /* SwiftUI.framework in Frameworks */,
+				042C5ECD2FC489DA00713A5F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04C1AFD42FBD874A0059E9E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,10 +99,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042C5ECB2FC489DA00713A5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				042C5ECC2FC489DA00713A5F /* WidgetKit.framework */,
+				042C5ECE2FC489DA00713A5F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		04C1AFCE2FBD874A0059E9E3 = {
 			isa = PBXGroup;
 			children = (
 				04C1AFD92FBD874A0059E9E3 /* quickfood */,
+				042C5ED02FC489DA00713A5F /* recommendationwidget */,
+				042C5ECB2FC489DA00713A5F /* Frameworks */,
 				04C1AFD82FBD874A0059E9E3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				04C1AFD72FBD874A0059E9E3 /* quickfood.app */,
+				042C5ECA2FC489DA00713A5F /* recommendationwidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +130,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		042C5EC92FC489DA00713A5F /* recommendationwidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 042C5EE12FC489DA00713A5F /* Build configuration list for PBXNativeTarget "recommendationwidgetExtension" */;
+			buildPhases = (
+				042C5EC62FC489DA00713A5F /* Sources */,
+				042C5EC72FC489DA00713A5F /* Frameworks */,
+				042C5EC82FC489DA00713A5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				042C5ED02FC489DA00713A5F /* recommendationwidget */,
+			);
+			name = recommendationwidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = recommendationwidgetExtension;
+			productReference = 042C5ECA2FC489DA00713A5F /* recommendationwidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		04C1AFD62FBD874A0059E9E3 /* quickfood */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04C1AFE42FBD874B0059E9E3 /* Build configuration list for PBXNativeTarget "quickfood" */;
@@ -55,10 +159,12 @@
 				04C1AFD32FBD874A0059E9E3 /* Sources */,
 				04C1AFD42FBD874A0059E9E3 /* Frameworks */,
 				04C1AFD52FBD874A0059E9E3 /* Resources */,
+				042C5EDD2FC489DA00713A5F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				042C5EDB2FC489DA00713A5F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				04C1AFD92FBD874A0059E9E3 /* quickfood */,
@@ -80,6 +186,9 @@
 				LastSwiftUpdateCheck = 2650;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
+					042C5EC92FC489DA00713A5F = {
+						CreatedOnToolsVersion = 26.5;
+					};
 					04C1AFD62FBD874A0059E9E3 = {
 						CreatedOnToolsVersion = 26.5;
 					};
@@ -100,11 +209,19 @@
 			projectRoot = "";
 			targets = (
 				04C1AFD62FBD874A0059E9E3 /* quickfood */,
+				042C5EC92FC489DA00713A5F /* recommendationwidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		042C5EC82FC489DA00713A5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04C1AFD52FBD874A0059E9E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +232,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		042C5EC62FC489DA00713A5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04C1AFD32FBD874A0059E9E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +248,75 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		042C5EDB2FC489DA00713A5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 042C5EC92FC489DA00713A5F /* recommendationwidgetExtension */;
+			targetProxy = 042C5EDA2FC489DA00713A5F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		042C5EDE2FC489DA00713A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZUJU3SHB2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = recommendationwidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = recommendationwidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.quickfood.recommendationwidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		042C5EDF2FC489DA00713A5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZUJU3SHB2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = recommendationwidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = recommendationwidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johan.quickfood.recommendationwidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		04C1AFE22FBD874B0059E9E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,6 +509,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		042C5EE12FC489DA00713A5F /* Build configuration list for PBXNativeTarget "recommendationwidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042C5EDE2FC489DA00713A5F /* Debug */,
+				042C5EDF2FC489DA00713A5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04C1AFD22FBD874A0059E9E3 /* Build configuration list for PBXProject "quickfood" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
