@@ -23,10 +23,10 @@ struct AllergyChipView: View {
                     .font(.headline)
             }
             .padding()
-            .foregroundStyle(isSelected ? .white : .primaryRed)
+            .foregroundStyle(isSelected ? .white : .primaryYellow)
             .background(
                 RoundedRectangle(cornerRadius: 28)
-                    .fill(isSelected ? .primaryRed : .white)
+                    .fill(isSelected ? .primaryYellow : .white)
                     .shadow(color: .black.opacity(0.18), radius: 6, x: 3, y: 0)
             )
         }

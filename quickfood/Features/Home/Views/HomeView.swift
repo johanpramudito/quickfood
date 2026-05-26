@@ -14,12 +14,12 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
 
     var body: some View {
-        VStack(spacing: 8) {
-            HStack{
+        VStack(alignment: .leading, spacing: -5) {
+            HStack(alignment: .center, spacing: 12) {
                 Circle()
                     .fill(Color.red)
                     .frame(width: 50, height: 50)
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 2) {
                     Text("Morning, \(userName)!")
                         .font(.title2)
                         .fontWeight(.bold)
@@ -28,13 +28,18 @@ struct HomeView: View {
                         .fontWeight(.light)
                 }
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("Morning, \(userName). \(Date().formatted(date: .long, time: .omitted))")
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)
-            .frame(maxWidth: .infinity, alignment: .init(horizontal: .leading, vertical: .top))
             
             PhaseCard(cycleDay: viewModel.todayCycleDay)
             
             CardView(currentPhase: viewModel.todayCycleDay?.phases.first)
         }
+        .background(.primaryBackground)
+        .padding(.top, 16)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .task {
             viewModel.loadHealthDataIfNeeded()
             

@@ -34,6 +34,10 @@ struct EnterNameView: View {
                     text: $nama)
                 .padding(16)
                 .fontDesign(.rounded)
+                .keyboardType(.namePhonePad)
+                .textContentType(.name)
+                .submitLabel(.next)
+                .onSubmit { /* navigate next */ }
 
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .circular))
                 .overlay(
@@ -56,14 +60,17 @@ struct EnterNameView: View {
                     .padding()
                     .fontDesign(.rounded)
             }
+            .disabled(nama.isEmpty)
+            .accessibilityHint(nama.isEmpty ? "Enter your name first" : "")
             .foregroundStyle(.white)
-            .glassEffect(.regular.tint(.primaryRed).interactive())
+            .glassEffect(.regular.tint(.primaryYellow).interactive())
             .navigationDestination(isPresented: $navigateToAvoidFood) {
                 AvoidFoodView()
             }
             .navigationBarBackButtonHidden(true)
 
         }.padding(20)
+            .background(.primaryBackground)
     }
 }
 

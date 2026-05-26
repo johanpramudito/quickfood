@@ -16,7 +16,7 @@ struct CardView: View {
     let currentPhase: CyclePhase?  // ← add this
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: -3) {
             Text("We Recommend You to Eat")
                 .padding(.leading, 16)
                 .font(.body.bold())
