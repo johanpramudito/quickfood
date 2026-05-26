@@ -49,7 +49,7 @@ struct HomeView: View {
                         AvoidFoodsSection(allergies: selectedAllergies)
 //                    }
                     
-                    CardView(currentPhase: viewModel.todayCycleDay?.phases.first)
+                    CardView(allergies: selectedAllergies, currentPhase: viewModel.todayCycleDay?.phases.first)
                 }
                 .padding(.top, 16)
                 .padding(.bottom, 24)

@@ -20,9 +20,9 @@ struct AvoidFoodsSection: View {
                 NavigationLink {
                     AvoidFoodView(isEditing: true)
                 } label: {
-                    Image(systemName: "pencil")
+                    Image(systemName: "pencil.line")
                         .font(.title3.weight(.semibold))
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.primary)
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Edit avoid foods")

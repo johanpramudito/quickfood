@@ -13,6 +13,8 @@ struct CardView: View {
     @Query(sort: \Food.name) private var foodsData: [Food]
     @StateObject private var viewModel = CardStackViewModel()
 
+    let allergies: [UserAllergy]
+    
     let currentPhase: CyclePhase?  // ← add this
 
     var body: some View {
@@ -45,8 +47,18 @@ struct CardView: View {
     }
 
     private func filteredFoods() -> [Food] {
-        guard let phase = currentPhase else { return foodsData }
-        return foodsData.filter { $0.cyclePhase == phase.rawValue }
+        let allergyTags = Set(allergies.map { $0.rawValue })
+
+        guard let phase = currentPhase else {
+            return foodsData.filter { food in
+                Set(food.tags).isDisjoint(with: allergyTags)
+            }
+        }
+
+        return foodsData.filter { food in
+            food.cyclePhase == phase.rawValue &&
+            Set(food.tags).isDisjoint(with: allergyTags)
+        }
     }
 
     private func loadFilteredFoods() {
@@ -61,6 +73,6 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(currentPhase: .follicularPhase)
+    CardView(allergies: [.beef, .chicken], currentPhase: .follicularPhase)
         .modelContainer(for: Food.self, inMemory: true)
 }

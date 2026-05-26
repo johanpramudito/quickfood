@@ -147,6 +147,7 @@ struct AvoidFoodView: View {
 
                 if isEditing {
                     dismiss()
+                    saveSelectedAllergies()
                 } else {
                     navigateToHealthPermission = true
                 }
