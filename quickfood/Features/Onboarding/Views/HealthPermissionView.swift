@@ -63,7 +63,7 @@ struct HealthPermissionView: View {
             .glassEffect(.regular.tint(.primaryYellow).interactive())
             .disabled(!hasCollectedPermission || isRequestingPermission)
             .opacity(hasCollectedPermission && !isRequestingPermission ? 1 : 0.5)
-            .navigationBarBackButtonHidden(true)
+//            .navigationBarBackButtonHidden(true)
 
         }.padding(20)
             .background(.primaryBackground)

@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct AvoidFoodView: View {
+    @Environment(\.dismiss) private var dismiss
+    @AppStorage("selectedAllergies") private var selectedAllergyRawValues = ""
     @State private var navigateToHealthPermission = false
+
+    private let isEditing: Bool
 
     @State private var nama:String = ""
     @State private var selectedAllergies: Set<UserAllergy> = []
+
+    init(isEditing: Bool = false) {
+        self.isEditing = isEditing
+    }
     
     private func toggleAllergy(_ allergy: UserAllergy) {
         if selectedAllergies.contains(allergy) {
@@ -19,6 +27,23 @@ struct AvoidFoodView: View {
         } else {
             selectedAllergies.insert(allergy)
         }
+
+        saveSelectedAllergies()
+    }
+
+    private func loadSelectedAllergies() {
+        selectedAllergies = Set(
+            selectedAllergyRawValues
+                .split(separator: ",")
+                .compactMap { UserAllergy(rawValue: String($0)) }
+        )
+    }
+
+    private func saveSelectedAllergies() {
+        selectedAllergyRawValues = selectedAllergies
+            .map(\.rawValue)
+            .sorted()
+            .joined(separator: ",")
     }
     
     private let columns = [
@@ -118,9 +143,15 @@ struct AvoidFoodView: View {
 
             Spacer()
             Button {
-                navigateToHealthPermission = true
+                saveSelectedAllergies()
+
+                if isEditing {
+                    dismiss()
+                } else {
+                    navigateToHealthPermission = true
+                }
             } label: {
-                Text("Next")
+                Text(isEditing ? "Done" : "Next")
                     .bold()
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -130,11 +161,14 @@ struct AvoidFoodView: View {
             .navigationDestination(isPresented: $navigateToHealthPermission) {
                 HealthPermissionView()
             }
-            .navigationBarBackButtonHidden(true)
+//            .navigationBarBackButtonHidden(true)
 
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(20)
         .background(.primaryBackground)
+        .onAppear {
+            loadSelectedAllergies()
+        }
     }
 }
 

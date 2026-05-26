@@ -13,7 +13,9 @@ struct SplashScreenView: View {
     var body: some View {
         ZStack {
             if self.isActive {
-                HomeView()
+                NavigationStack {
+                    HomeView()
+                }
             } else {
                 VStack {
                     Image("logo")

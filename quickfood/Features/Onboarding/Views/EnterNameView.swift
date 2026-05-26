@@ -67,7 +67,7 @@ struct EnterNameView: View {
             .navigationDestination(isPresented: $navigateToAvoidFood) {
                 AvoidFoodView()
             }
-            .navigationBarBackButtonHidden(true)
+//            .navigationBarBackButtonHidden(true)
 
         }.padding(20)
             .background(.primaryBackground)

@@ -34,6 +34,35 @@ final class HomeViewModel: ObservableObject {
         healthModel.checkHealthData()
     }
 
+    func displayName(from userName: String) -> String {
+        userName.isEmpty ? "there" : userName
+    }
+
+    func selectedAllergies(from rawValues: String) -> [UserAllergy] {
+        let selectedRawValues = Set(
+            rawValues
+                .split(separator: ",")
+                .map(String.init)
+        )
+
+        return UserAllergy.allCases.filter { selectedRawValues.contains($0.rawValue) }
+    }
+
+    func greeting(for date: Date) -> String {
+        let hour = Calendar.current.component(.hour, from: date)
+
+        switch hour {
+        case 5..<12:
+            return "Morning"
+        case 12..<17:
+            return "Afternoon"
+        case 17..<21:
+            return "Evening"
+        default:
+            return "Night"
+        }
+    }
+
     private func bindHealthModel() {
         healthModel.$status
             .receive(on: DispatchQueue.main)
