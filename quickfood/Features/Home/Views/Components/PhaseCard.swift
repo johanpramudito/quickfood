@@ -53,7 +53,16 @@ struct PhaseCard: View {
             .fixedSize(horizontal: false, vertical: true)
         }
         .padding(20)
-        .background(Color.primaryYellow)
+        .background(
+            LinearGradient(
+                colors: [
+                    Color(red: 1.0, green: 0.635, blue: 0.145),
+                    Color(red: 0.776, green: 0.447, blue: 0.0)
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        )
         .cornerRadius(20)
         .padding(20)
         
