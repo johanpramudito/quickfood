@@ -15,10 +15,16 @@ struct FoodCard: View {
     let SUPABASE_URL = "https://vlusefqntgrzetlqvulu.supabase.co/storage/v1/object/public/FoodCycle"
 
     private let onSwiped: () -> Void
+    private let onSelected: (Food) -> Void
 
-    init(foodsData: Food, onSwiped: @escaping () -> Void = {}) {
+    init(
+        foodsData: Food,
+        onSwiped: @escaping () -> Void = {},
+        onSelected: @escaping (Food) -> Void = { _ in }
+    ) {
         _viewModel = StateObject(wrappedValue: CardViewModel(food: foodsData))
         self.onSwiped = onSwiped
+        self.onSelected = onSelected
     }
 
     var body: some View {
@@ -107,6 +113,12 @@ struct FoodCard: View {
                     handleSwipeEnded()
                 }
             
+        )
+        .simultaneousGesture(
+            TapGesture()
+                .onEnded {
+                    onSelected(viewModel.food)
+                }
         )
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(viewModel.food.name). \(viewModel.food.notes)")
