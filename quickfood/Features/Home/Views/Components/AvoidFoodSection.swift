@@ -22,7 +22,7 @@ struct AvoidFoodsSection: View {
                 } label: {
                     Image(systemName: "pencil.line")
                         .font(.title3.weight(.semibold))
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(Color.primary)
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Edit avoid foods")
