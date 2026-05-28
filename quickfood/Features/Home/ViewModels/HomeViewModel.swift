@@ -1,10 +1,3 @@
-//
-//  HomeViewModel.swift
-//  quickfood
-//
-//  Created by Muhammad Ridwan Novriansyah on 22/05/26.
-//
-
 import Combine
 import Foundation
 
@@ -12,6 +5,9 @@ import Foundation
 final class HomeViewModel: ObservableObject {
     @Published private(set) var status = "Not checked yet"
     @Published private(set) var todayCycleDay: CycleDay?
+
+    @Published var isEditingName: Bool = false
+    @Published var editedName: String = ""
 
     private let healthModel: HealthCheckViewModel
     private var hasCheckedHealthData = false
@@ -36,6 +32,23 @@ final class HomeViewModel: ObservableObject {
 
     func displayName(from userName: String) -> String {
         userName.isEmpty ? "there" : userName
+    }
+
+    func startEditingName(currentName: String) {
+        editedName = currentName
+        isEditingName = true
+    }
+
+    func saveEditedName(currentName: String) -> String {
+        let trimmedName = editedName.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        isEditingName = false
+
+        guard !trimmedName.isEmpty else {
+            return currentName
+        }
+
+        return trimmedName
     }
 
     func selectedAllergies(from rawValues: String) -> [UserAllergy] {

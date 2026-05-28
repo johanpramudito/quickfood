@@ -82,8 +82,18 @@ struct CardView: View {
     }
 
     private func filteredFoods() -> [Food] {
-        guard let phase = currentPhase else { return foodsData }
-        return foodsData.filter { $0.cyclePhase == phase.rawValue }
+        let allergyTags = Set(allergies.map { $0.rawValue })
+
+        guard let phase = currentPhase else {
+            return foodsData.filter { food in
+                Set(food.tags).isDisjoint(with: allergyTags)
+            }
+        }
+
+        return foodsData.filter { food in
+            food.cyclePhase == phase.rawValue &&
+            Set(food.tags).isDisjoint(with: allergyTags)
+        }
     }
 
     private func loadFilteredFoods() {
@@ -199,6 +209,6 @@ private struct RecipeSheetView: View {
 }
 
 #Preview {
-    CardView(currentPhase: .follicularPhase)
+    CardView(allergies: [.beef, .chicken], currentPhase: .follicularPhase)
         .modelContainer(for: Food.self, inMemory: true)
 }

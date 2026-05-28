@@ -105,13 +105,17 @@ struct PhaseCard: View {
     private var captionPhase: String {
         switch phase {
         case .menstruationPhase:
-            return "Your body needs extra rest and nutrient-dense, warming foods to replenish energy and iron levels."
+            return "Your body may need more rest, iron-rich foods, warm meals, and gentle hydration to help replenish energy during your period."
+
         case .follicularPhase:
-            return "Your body needs extra rest and nutrient-dense, warming foods to replenish energy and iron levels."
+            return "Your energy may start to rise, so fresh, protein-rich, and fiber-filled foods can help support recovery and hormone balance."
+
         case .ovulationPhase:
-            return "Your body needs extra rest and nutrient-dense, warming foods to replenish energy and iron levels."
+            return "Your body may benefit from antioxidant-rich foods, lean protein, and plenty of hydration to support peak energy and overall balance."
+
         case .lutealPhase:
-            return "Your body needs extra rest and nutrient-dense, warming foods to replenish energy and iron levels."
+            return "Your body may need steady meals, complex carbs, magnesium-rich foods, and calming nutrients to help manage cravings and mood changes."
+
         case nil:
             return "–"
         }

@@ -2,8 +2,15 @@
   {
     "name": "Rawon",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Black Nut Sauce"],
-    "nutrition": ["Antioxidant", "Iron", "Protein"],
+    "tags": [
+      "beef",
+      "treeNuts"
+    ],
+    "nutrition": [
+      "Antioxidant",
+      "Iron",
+      "Protein"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Soupy side dish with Black Nut Sauce — iron-rich, antioxidant-rich.",
     "page": 277,
@@ -12,8 +19,14 @@
   {
     "name": "Pepes Ikan",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Fish", "Steamed in Leaf"],
-    "nutrition": ["Omega-3", "Protein", "Zinc"],
+    "tags": [
+      "seafood"
+    ],
+    "nutrition": [
+      "Omega-3",
+      "Protein",
+      "Zinc"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Dry side dish with Fish, Steamed in Leaf — omega-3 source, good protein source.",
     "page": 550,
@@ -22,8 +35,14 @@
   {
     "name": "Rendang",
     "category": "Lauk Pauk Gorengan",
-    "tags": ["Rendang"],
-    "nutrition": ["Healthy fats", "Iron", "Protein"],
+    "tags": [
+      "beef"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Iron",
+      "Protein"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Fried side dish with Rendang — iron-rich, good protein source.",
     "page": 684,
@@ -32,8 +51,12 @@
   {
     "name": "Nasi Wuduk",
     "category": "Makanan Utama",
-    "tags": ["Rice"],
-    "nutrition": ["Carbohydrate", "Fiber", "Healthy fats"],
+    "tags": [],
+    "nutrition": [
+      "Carbohydrate",
+      "Fiber",
+      "Healthy fats"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Main dish with Rice — coconut-steamed, provides fiber and healthy fats.",
     "page": 199,
@@ -42,8 +65,13 @@
   {
     "name": "Sayur Bayam",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Spinach"],
-    "nutrition": ["Fiber", "Iron", "Magnesium", "Vitamin C"],
+    "tags": [],
+    "nutrition": [
+      "Fiber",
+      "Iron",
+      "Magnesium",
+      "Vitamin C"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Soupy side dish with Spinach — iron-rich, magnesium source, antioxidant-rich.",
     "page": null,
@@ -52,8 +80,15 @@
   {
     "name": "Soto Daging",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Beef", "Broth"],
-    "nutrition": ["Iron", "Protein", "Vitamin B", "Zinc"],
+    "tags": [
+      "beef"
+    ],
+    "nutrition": [
+      "Iron",
+      "Protein",
+      "Vitamin B",
+      "Zinc"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Soupy side dish with Beef, Broth — iron-rich, good protein source, mineral-rich.",
     "page": null,
@@ -62,8 +97,12 @@
   {
     "name": "Sayur Kangkung",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Water Spinach"],
-    "nutrition": ["Fiber", "Iron", "Vitamin C"],
+    "tags": [],
+    "nutrition": [
+      "Fiber",
+      "Iron",
+      "Vitamin C"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Soupy side dish with Water Spinach — iron-rich, vitamin C boosts iron absorption.",
     "page": null,
@@ -72,8 +111,15 @@
   {
     "name": "Oseng Tempe",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Tempeh"],
-    "nutrition": ["Calcium", "Fiber", "Iron", "Protein"],
+    "tags": [
+      "soy"
+    ],
+    "nutrition": [
+      "Calcium",
+      "Fiber",
+      "Iron",
+      "Protein"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Dry side dish with Tempeh — iron-rich, good protein source, mineral-rich.",
     "page": null,
@@ -82,8 +128,14 @@
   {
     "name": "Pindang Ikan",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Fish"],
-    "nutrition": ["Omega-3", "Protein", "Zinc"],
+    "tags": [
+      "seafood"
+    ],
+    "nutrition": [
+      "Omega-3",
+      "Protein",
+      "Zinc"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Soupy side dish with Fish — omega-3 source, good protein source.",
     "page": 275,
@@ -92,8 +144,15 @@
   {
     "name": "Gulai Ikan Tongkol",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Fish", "Curry"],
-    "nutrition": ["Healthy fats", "Omega-3", "Protein", "Zinc"],
+    "tags": [
+      "seafood"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Omega-3",
+      "Protein",
+      "Zinc"
+    ],
     "cyclePhase": "menstruationPhase",
     "notes": "Soupy side dish with Fish, Curry — omega-3 source, good protein source.",
     "page": 227,
@@ -102,8 +161,13 @@
   {
     "name": "Ayam Goreng",
     "category": "Lauk Pauk Gorengan",
-    "tags": ["Chicken", "Fried"],
-    "nutrition": ["Healthy fats", "Protein"],
+    "tags": [
+      "chicken"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Protein"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Fried side dish with Chicken — good protein source.",
     "page": 640,
@@ -112,8 +176,14 @@
   {
     "name": "Sate Ayam",
     "category": "Lauk Pauk Gorengan",
-    "tags": ["Chicken"],
-    "nutrition": ["Healthy fats", "Protein"],
+    "tags": [
+      "chicken",
+      "peanuts"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Protein"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Fried side dish with Chicken — good protein source.",
     "page": 738,
@@ -122,8 +192,16 @@
   {
     "name": "Perkedel Jagung",
     "category": "Lauk Pauk Gorengan",
-    "tags": ["Corn"],
-    "nutrition": ["Carbohydrate", "Fiber", "Magnesium"],
+    "tags": [
+      "egg",
+      "wheat",
+      "gluten"
+    ],
+    "nutrition": [
+      "Carbohydrate",
+      "Fiber",
+      "Magnesium"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Fried side dish with Corn — magnesium source.",
     "page": 676,
@@ -132,8 +210,14 @@
   {
     "name": "Soto Ayam",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Chicken", "Broth"],
-    "nutrition": ["Healthy fats", "Protein", "Vitamin B"],
+    "tags": [
+      "chicken"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Protein",
+      "Vitamin B"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Soupy side dish with Chicken, Broth — good protein source.",
     "page": 353,
@@ -142,8 +226,14 @@
   {
     "name": "Ayam Panggang Kecap",
     "category": "Lauk Pauk Gorengan",
-    "tags": ["Chicken", "Grilled"],
-    "nutrition": ["Healthy fats", "Protein"],
+    "tags": [
+      "chicken",
+      "soy"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Protein"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Fried side dish with Chicken, Grilled — good protein source.",
     "page": 715,
@@ -152,8 +242,14 @@
   {
     "name": "Otak Otak",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Fish", "Grilled in Leaf"],
-    "nutrition": ["Iron", "Protein", "Vitamin B"],
+    "tags": [
+      "seafood"
+    ],
+    "nutrition": [
+      "Iron",
+      "Protein",
+      "Vitamin B"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Dry side dish — iron-rich, good protein source.",
     "page": 523,
@@ -162,8 +258,14 @@
   {
     "name": "Telur Dadar",
     "category": "Lauk Pauk Gorengan",
-    "tags": ["Egg", "Fried"],
-    "nutrition": ["Healthy fats", "Protein", "Vitamin B"],
+    "tags": [
+      "egg"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Protein",
+      "Vitamin B"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Fried side dish with Egg — good protein source.",
     "page": null,
@@ -172,8 +274,15 @@
   {
     "name": "Empal Daging",
     "category": "Lauk Pauk Gorengan",
-    "tags": ["Beef", "Fried"],
-    "nutrition": ["Healthy fats", "Iron", "Protein", "Zinc"],
+    "tags": [
+      "beef"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Iron",
+      "Protein",
+      "Zinc"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Fried side dish with Beef — good protein source.",
     "page": null,
@@ -182,8 +291,15 @@
   {
     "name": "Dendeng Sapi",
     "category": "Lauk Pauk Gorengan",
-    "tags": ["Beef"],
-    "nutrition": ["Iron", "Magnesium", "Protein", "Zinc"],
+    "tags": [
+      "beef"
+    ],
+    "nutrition": [
+      "Iron",
+      "Magnesium",
+      "Protein",
+      "Zinc"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Dry side dish with Beef — good protein source, magnesium source.",
     "page": null,
@@ -192,8 +308,14 @@
   {
     "name": "Abon Sapi",
     "category": "Lauk Pauk Gorengan",
-    "tags": ["Beef"],
-    "nutrition": ["Healthy fats", "Iron", "Protein"],
+    "tags": [
+      "beef"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Iron",
+      "Protein"
+    ],
     "cyclePhase": "follicularPhase",
     "notes": "Fried side dish with Beef — good protein source.",
     "page": null,
@@ -202,8 +324,15 @@
   {
     "name": "Pecel",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Mixed Vegetables", "Peanuts"],
-    "nutrition": ["Antioxidant", "Fiber", "Protein", "Vitamin C"],
+    "tags": [
+      "peanuts"
+    ],
+    "nutrition": [
+      "Antioxidant",
+      "Fiber",
+      "Protein",
+      "Vitamin C"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Mixed Vegetables, Peanuts — antioxidant-rich, good protein source.",
     "page": 559,
@@ -212,8 +341,12 @@
   {
     "name": "Urap",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Mixed Vegetables", "Coconut"],
-    "nutrition": ["Antioxidant", "Fiber", "Vitamin C"],
+    "tags": [],
+    "nutrition": [
+      "Antioxidant",
+      "Fiber",
+      "Vitamin C"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Mixed Vegetables, Coconut — antioxidant-rich.",
     "page": 629,
@@ -222,8 +355,12 @@
   {
     "name": "Sayur Asam Sawi",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Tamarind", "Vegetables"],
-    "nutrition": ["Antioxidant", "Fiber", "Vitamin C"],
+    "tags": [],
+    "nutrition": [
+      "Antioxidant",
+      "Fiber",
+      "Vitamin C"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Soupy side dish with Tamarind, Vegetables — antioxidant-rich.",
     "page": 281,
@@ -232,8 +369,16 @@
   {
     "name": "Ayam Bumbu Rujak",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Chicken", "Spice Blend", "Spicy Fruit Salad"],
-    "nutrition": ["Antioxidant", "Fiber", "Healthy fats", "Protein", "Vitamin C"],
+    "tags": [
+      "chicken"
+    ],
+    "nutrition": [
+      "Antioxidant",
+      "Fiber",
+      "Healthy fats",
+      "Protein",
+      "Vitamin C"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Chicken, Spice Blend — antioxidant-rich, good protein source.",
     "page": 362,
@@ -242,8 +387,13 @@
   {
     "name": "Acar",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Vegetables", "Tamarind"],
-    "nutrition": ["Antioxidant", "Fiber", "Vitamin C", "Zinc"],
+    "tags": [],
+    "nutrition": [
+      "Antioxidant",
+      "Fiber",
+      "Vitamin C",
+      "Zinc"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Pickled side dish — antioxidant-rich, zinc source.",
     "page": 376,
@@ -252,8 +402,11 @@
   {
     "name": "Lodeh",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Mixed Vegetables"],
-    "nutrition": ["Fiber", "Healthy fats"],
+    "tags": [],
+    "nutrition": [
+      "Fiber",
+      "Healthy fats"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Soupy side dish with Mixed Vegetables.",
     "page": 260,
@@ -262,8 +415,17 @@
   {
     "name": "Gado Gado",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Mixed Vegetables", "Peanuts"],
-    "nutrition": ["Antioxidant", "Fiber", "Healthy fats", "Protein", "Vitamin C"],
+    "tags": [
+      "peanuts",
+      "egg"
+    ],
+    "nutrition": [
+      "Antioxidant",
+      "Fiber",
+      "Healthy fats",
+      "Protein",
+      "Vitamin C"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Mixed Vegetables, Peanuts — antioxidant-rich, good protein source.",
     "page": null,
@@ -272,8 +434,13 @@
   {
     "name": "Oseng Kangkung",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Water Spinach"],
-    "nutrition": ["Antioxidant", "Fiber", "Iron", "Vitamin C"],
+    "tags": [],
+    "nutrition": [
+      "Antioxidant",
+      "Fiber",
+      "Iron",
+      "Vitamin C"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Dry side dish with Water Spinach — antioxidant-rich.",
     "page": null,
@@ -282,8 +449,15 @@
   {
     "name": "Cumi Bakar",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Squid", "Grilled"],
-    "nutrition": ["Omega-3", "Protein", "Zinc"],
+    "tags": [
+      "seafood",
+      "shellfish"
+    ],
+    "nutrition": [
+      "Omega-3",
+      "Protein",
+      "Zinc"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Grilled squid — high zinc, good protein, omega-3 source.",
     "page": null,
@@ -292,8 +466,15 @@
   {
     "name": "Tumis Udang Bumbu Merah",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Shrimp", "Stir-fry", "Spice Blend"],
-    "nutrition": ["Antioxidant", "Protein", "Zinc"],
+    "tags": [
+      "seafood",
+      "shellfish"
+    ],
+    "nutrition": [
+      "Antioxidant",
+      "Protein",
+      "Zinc"
+    ],
     "cyclePhase": "ovulationPhase",
     "notes": "Stir-fried shrimp in red spice paste — high zinc, antioxidant-rich.",
     "page": null,
@@ -302,8 +483,14 @@
   {
     "name": "Opor Ayam",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Chicken", "Coconut Broth"],
-    "nutrition": ["Calcium", "Healthy fats", "Protein"],
+    "tags": [
+      "chicken"
+    ],
+    "nutrition": [
+      "Calcium",
+      "Healthy fats",
+      "Protein"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Soupy side dish with Chicken, Coconut Broth — calcium source, good protein source.",
     "page": 271,
@@ -312,8 +499,17 @@
   {
     "name": "Semur Daging",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Beef", "Sweet Soy Braised"],
-    "nutrition": ["Healthy fats", "Iron", "Protein", "Vitamin B", "Zinc"],
+    "tags": [
+      "beef",
+      "soy"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Iron",
+      "Protein",
+      "Vitamin B",
+      "Zinc"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Soupy side dish with Beef, Sweet Soy Braised — iron-rich, good protein source.",
     "page": 333,
@@ -322,8 +518,14 @@
   {
     "name": "Gulai Telur",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Egg", "Curry"],
-    "nutrition": ["Healthy fats", "Protein", "Vitamin B"],
+    "tags": [
+      "egg"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Protein",
+      "Vitamin B"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Soupy side dish with Egg, Curry — good protein source.",
     "page": 248,
@@ -332,8 +534,13 @@
   {
     "name": "Gulai Ayam",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Chicken", "Curry"],
-    "nutrition": ["Healthy fats", "Protein"],
+    "tags": [
+      "chicken"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Protein"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Soupy side dish with Chicken, Curry — good protein source.",
     "page": 221,
@@ -342,8 +549,11 @@
   {
     "name": "Kentang Ongklok",
     "category": "Makanan Utama",
-    "tags": ["Potato"],
-    "nutrition": ["Carbohydrate", "Vitamin B"],
+    "tags": [],
+    "nutrition": [
+      "Carbohydrate",
+      "Vitamin B"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Main dish with Potato — complex carbohydrate source.",
     "page": 184,
@@ -352,8 +562,15 @@
   {
     "name": "Semur Tahu",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Tofu", "Sweet Soy Braised"],
-    "nutrition": ["Calcium", "Iron", "Protein", "Vitamin B"],
+    "tags": [
+      "soy"
+    ],
+    "nutrition": [
+      "Calcium",
+      "Iron",
+      "Protein",
+      "Vitamin B"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Soupy side dish with Tofu, Sweet Soy Braised — iron-rich, calcium source.",
     "page": 336,
@@ -362,8 +579,11 @@
   {
     "name": "Nasi Kuning",
     "category": "Makanan Utama",
-    "tags": ["Rice"],
-    "nutrition": ["Carbohydrate", "Fiber"],
+    "tags": [],
+    "nutrition": [
+      "Carbohydrate",
+      "Fiber"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Main dish with Rice — complex carbohydrate source.",
     "page": 195,
@@ -372,8 +592,14 @@
   {
     "name": "Gulai Pisang",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Banana", "Curry"],
-    "nutrition": ["Carbohydrate", "Healthy fats", "Magnesium", "Protein", "Vitamin B"],
+    "tags": [],
+    "nutrition": [
+      "Carbohydrate",
+      "Healthy fats",
+      "Magnesium",
+      "Protein",
+      "Vitamin B"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Soupy side dish with Banana, Curry — good protein source, magnesium source.",
     "page": 242,
@@ -382,8 +608,15 @@
   {
     "name": "Semur Ayam",
     "category": "Lauk Pauk Basah Tidak Berkuah",
-    "tags": ["Chicken", "Sweet Soy Braised"],
-    "nutrition": ["Healthy fats", "Protein", "Vitamin B"],
+    "tags": [
+      "chicken",
+      "soy"
+    ],
+    "nutrition": [
+      "Healthy fats",
+      "Protein",
+      "Vitamin B"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Dry side dish with Chicken, Sweet Soy Braised — good protein source.",
     "page": null,
@@ -392,8 +625,15 @@
   {
     "name": "Soto Betawi",
     "category": "Lauk Pauk Basah Berkuah",
-    "tags": ["Beef", "Coconut Milk", "Broth"],
-    "nutrition": ["Calcium", "Healthy fats", "Protein", "Vitamin B"],
+    "tags": [
+      "beef"
+    ],
+    "nutrition": [
+      "Calcium",
+      "Healthy fats",
+      "Protein",
+      "Vitamin B"
+    ],
     "cyclePhase": "lutealPhase",
     "notes": "Soupy side dish with Beef, Coconut Milk — calcium source, good protein source.",
     "page": null,
