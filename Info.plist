@@ -15,9 +15,18 @@
     <true/>
     <key>UILaunchScreen</key>
     <dict/>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>This app writes health data to help track your menstrual cycle and provide personalized food recommendations.</string>
     <key>UISupportedInterfaceOrientations</key>
     <array>
         <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
 </dict>
 </plist>

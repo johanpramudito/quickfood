@@ -18,24 +18,24 @@ struct PhaseCard: View {
         VStack(spacing: 12) {
             Text("Current Phase:")
                 .frame(maxWidth: .infinity, alignment: .init(horizontal: .leading, vertical: .top))
-                .font(.system(.callout, design: .default, weight: .bold))
-                .foregroundColor(.white)
+                .font(.callout.bold())
+                .foregroundColor(Color(red: 0.10, green: 0.04, blue: 0.0))
 
             HStack {
                 Text(phaseIcon)
-                    .font(.system(size: 50))
+                    .font(.system(.largeTitle, design: .default))
                     .accessibilityLabel(phaseTitle + " icon")
                     .accessibilityHidden(false)
 
                 VStack(alignment: .leading) {
                     Text(phaseTitle)
-                        .font(.system(size: 30, weight: .bold, design: .default))
-                        .foregroundColor(.white)
+                        .font(.title.bold())
+                        .foregroundColor(Color(red: 0.10, green: 0.04, blue: 0.0))
 
                     Text(cycleDayText)
                         .font(.subheadline)
                         .fontWeight(.regular)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(red: 0.10, green: 0.04, blue: 0.0))
                     
                 }
                 .frame(maxWidth: .infinity, alignment: .init(horizontal: .leading, vertical: .top))
@@ -52,6 +52,8 @@ struct PhaseCard: View {
             .cornerRadius(8)
             .fixedSize(horizontal: false, vertical: true)
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(phaseTitle). \(cycleDayText). \(captionPhase)")
         .padding(20)
         .background(
             LinearGradient(

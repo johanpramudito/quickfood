@@ -46,6 +46,7 @@ struct FoodCard: View {
                     Color.gray.opacity(0.3)
                 }
             }
+            .accessibilityHidden(true)
             .accessibilityLabel("\(viewModel.food.name) photo")
             .accessibilityHint("Swipe left or right to skip")
             .frame(width: 362, height: 460)
@@ -71,18 +72,24 @@ struct FoodCard: View {
                 Text("\(viewModel.food.name)")
                     .foregroundStyle(Color.white)
                     .font(.title.bold())
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
                 
-                HStack(spacing: 8) {
-                    ForEach(Array(viewModel.food.nutrition.prefix(3)), id: \.self) { tag in
-                        HStack(spacing: 4) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(Array(viewModel.food.nutrition.prefix(3)), id: \.self) { tag in
                             Text("\(tag)")
                                 .foregroundStyle(Color.primary)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(Color.white.opacity(0.7))
+                                .cornerRadius(20)
+                                .fixedSize(horizontal: true, vertical: false)
                         }
-                        .frame(width: 102, height: 31)
-                        .background(Color.white.opacity(0.7))
-                        .cornerRadius(20)
                     }
                 }
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("Nutrients: \(viewModel.food.nutrition.prefix(3).joined(separator: ", "))")
                 
                 Divider()
                     .overlay(Color.white.opacity(0.4))
@@ -90,6 +97,7 @@ struct FoodCard: View {
                 Text("\(viewModel.food.notes)")
                     .font(.callout)
                     .foregroundStyle(Color.white)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             .padding(16)
         }

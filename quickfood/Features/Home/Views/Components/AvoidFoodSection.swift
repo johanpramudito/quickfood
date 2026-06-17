@@ -34,16 +34,19 @@ struct AvoidFoodsSection: View {
                         HStack(spacing: 8) {
                             Text(allergy.icon)
                                 .font(.title2)
+                                .accessibilityHidden(true)
 
                             Text(allergy.title)
                                 .font(.title3)
                                 .fontWeight(.semibold)
                         }
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.black)
                         .padding(.horizontal, 18)
                         .padding(.vertical, 10)
                         .background(.primaryYellow)
                         .clipShape(Capsule())
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel("Avoid \(allergy.title)")
 
                     }
                 }
