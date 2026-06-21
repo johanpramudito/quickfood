@@ -4,4 +4,11 @@
    <FileRef
       location = "self:">
    </FileRef>
+   <Group
+      location = "group:quickfoodTests"
+      name = "quickfoodTests">
+      <FileRef
+         location = "group:quickfoodTests.swift">
+      </FileRef>
+   </Group>
 </Workspace>
